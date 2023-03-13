@@ -1,7 +1,7 @@
 [
   {
     "desc": "Esta pizza está hecha con una base de masa de pizza fina y crujiente, cubierta con una deliciosa salsa de tomate, mozzarella fresca y hojas de albahaca fresca. Se hornea en un horno de leña hasta que la masa esté dorada y crujiente, y se sirve caliente. ¡Una auténtica delicia italiana!",
-    "id": "P001",
+    "id": "001",
     "img": "/images/1.jpg",
     "ingredients": [
       "mozzarella",
@@ -13,7 +13,7 @@
   },
   {
     "desc": "La pizza Pepperoni es una de las pizzas más populares en todo el mundo. Es una pizza de estilo estadounidense, que se caracteriza por su deliciosa salsa de tomate, su base de masa crujiente y su salami picante de pepperoni.",
-    "id": "P002",
+    "id": "002",
     "img": "/images/2.jpg",
     "ingredients": [
       "mozzarella",
@@ -26,7 +26,7 @@
   },
   {
     "desc": "La pizza Cuatro Quesos es una de las pizzas más populares en Italia. Como su nombre indica, lleva cuatro tipos diferentes de queso: mozzarella, gorgonzola, parmesano y provolone. La mezcla de sabores es perfecta para aquellos amantes del queso. Se hornea en un horno de leña y se sirve caliente.",
-    "id": "P003",
+    "id": "003",
     "img": "/images/3.jpg",
     "ingredients": [
       "mozzarella",
@@ -39,7 +39,7 @@
   },
   {
     "desc": "La pizza de pollo y pesto es una variante de la pizza clásica que incluye pesto y pollo en lugar de los ingredientes tradicionales. Es una opción deliciosa para aquellos que disfrutan de sabores más intensos en su pizza.",
-    "id": "P004",
+    "id": "004",
     "img": "/images/4.jpg",
     "ingredients": [
       "mozzarella",
@@ -48,12 +48,12 @@
       "tomate cherry",
       "parmesano"
     ],
-    "name": "pollo y pesto",
+    "name": "Pollo y pesto",
     "price": 7990
   },
   {
     "desc": "La pizza de jamón y champiñones es una de las opciones más populares de pizza en todo el mundo. Los champiñones y el jamón cocido se combinan con la mozzarella y la salsa de tomate para crear una pizza deliciosa y satisfactoria.",
-    "id": "P005",
+    "id": "005",
     "img": "/images/5.jpg",
     "ingredients": [
       "mozzarella",
@@ -61,11 +61,11 @@
       "champiñones",
       "salsa de tomate"
     ],
-    "name": "jamón y champiñones",
+    "name": "Jamón y champiñones",
     "price": 6490
   },
   {
-    "id": "P006",
+    "id": "006",
     "name": "Caprese",
     "desc": "Pizza de origen italiano que se caracteriza por tener tomate fresco, mozzarella y hojas de albahaca. Es una pizza fresca y ligera.",
     "img": "/images/6.jpg",
@@ -77,7 +77,7 @@
     "price": 7990
   },
   {
-    "id": "P007",
+    "id": "007",
     "name": "Mexicana",
     "desc": "Pizza con sabores mexicanos, lleva carne molida, chile jalapeño, maíz y salsa de tomate picante. Perfecta para quienes les gusta el picante.",
     "img": "/images/7.jpg",
@@ -92,31 +92,31 @@
   },
   {
     "desc": "La pizza de jamón y piña es una pizza clásica que combina el sabor salado del jamón con el dulce de la piña. Es una pizza muy popular en varios países del mundo y se puede encontrar en la mayoría de las pizzerías.",
-    "id": "P008",
+    "id": "008",
     "img": "/images/8.jpg",
     "ingredients": [
       "mozzarella",
       "jamón",
       "piña"
     ],
-    "name": "jamón y piña",
+    "name": "Jamón y piña",
     "price": 6490
   },
   {
     "desc": "La pizza margherita extra es una variación de la pizza margherita clásica, en la que se utiliza mozzarella de búfala en lugar de mozzarella común. La mozzarella de búfala es más cremosa y sabrosa que la mozzarella común, lo que le da a esta pizza un sabor aún más delicioso.",
-    "id": "P009",
+    "id": "009",
     "img": "/images/9.jpg",
     "ingredients": [
       "mozzarella di bufala",
       "tomate",
       "albahaca fresca"
     ],
-    "name": "margherita extra",
+    "name": "Margherita extra",
     "price": 7990
   },
   {
     "desc": "Pizza con base de crema de trufa, queso de cabra, espinacas frescas y huevo poché.",
-    "id": "P010",
+    "id": "010",
     "img": "/images/10.jpg",
     "ingredients": [
       "crema de trufa",
@@ -124,12 +124,12 @@
       "espinacas",
       "huevo"
     ],
-    "name": "trufa y queso de cabra",
+    "name": "Trufa y queso de cabra",
     "price": 7990
   },
   {
     "desc": "Pizza estilo Chicago con mozzarella, pepperoni, salchicha italiana, champiñones, cebolla, pimiento verde y salsa de tomate.",
-    "id": "P011",
+    "id": "011",
     "img": "/images/11.jpg",
     "ingredients": [
       "mozzarella",
@@ -139,12 +139,12 @@
       "cebolla",
       "pimiento verde"
     ],
-    "name": "estilo Chicago",
+    "name": "Estilo Chicago",
     "price": 10990
   },
   {
     "desc": "Pizza con base de salsa de tomate, mozzarella, jamón serrano, rúcula y láminas de queso parmesano.",
-    "id": "P012",
+    "id": "012",
     "img": "/images/12.jpg",
     "ingredients": [
       "mozzarella",
@@ -157,7 +157,7 @@
   },
   {
     "desc": "Pizza con base de salsa de tomate, mozzarella, pepperoni, jalapeños y aceitunas negras.",
-    "id": "P013",
+    "id": "013",
     "img": "/images/13.jpg",
     "ingredients": [
       "mozzarella",
@@ -165,12 +165,12 @@
       "jalapeños",
       "aceitunas negras"
     ],
-    "name": "pepperoni y jalapeños",
+    "name": "Pepperoni y jalapeños",
     "price": 7490
   },
   {
     "desc": "La pizza vegetariana es una opción saludable y deliciosa para aquellos que prefieren no comer carne. Esta pizza está cubierta de una mezcla de verduras frescas y sabrosas, como pimientos, champiñones, cebolla, tomate y aceitunas.",
-    "id": "P014",
+    "id": "014",
     "img": "/images/14.jpg",
     "ingredients": [
       "mozzarella",
@@ -185,7 +185,7 @@
   },
   {
     "desc": "La pizza al pesto es una variante de la pizza que utiliza pesto en lugar de salsa de tomate. Se suele cubrir con mozzarella y tomate fresco, y a menudo se le añade pollo a la parrilla o jamón serrano.",
-    "id": "P015",
+    "id": "015",
     "img": "/images/15.jpg",
     "ingredients": [
       "mozzarella",
@@ -194,12 +194,12 @@
       "pollo",
       "jamón serrano"
     ],
-    "name": "pesto",
+    "name": "Pesto",
     "price": 7990
   },
   {
     "desc": "La pizza de salmón ahumado es una deliciosa combinación de sabores que combina la riqueza del salmón con la cremosidad del queso crema y la frescura de la cebolla roja y el eneldo.",
-    "id": "P016",
+    "id": "016",
     "img": "/images/16.jpg",
     "ingredients": [
       "mozzarella",
@@ -208,12 +208,12 @@
       "cebolla roja",
       "eneldo"
     ],
-    "name": "salmón ahumado",
+    "name": "Salmón ahumado",
     "price": 8990
   },
   {
     "desc": "Pizza de camarones (mozzarella, camarones, ajo, aceite de oliva, perejil y ralladura de limón)",
-    "id": "P017",
+    "id": "017",
     "img": "/images/17.jpg",
     "ingredients": [
       "mozzarella",
@@ -228,7 +228,7 @@
   },
   {
     "desc": "Pizza de pesto y alcachofas con queso de cabra y tomates cherry",
-    "id": "P018",
+    "id": "018",
     "img": "/images/18.jpg",
     "ingredients": [
       "mozzarella",
@@ -242,7 +242,7 @@
   },
   {
     "desc": "Pizza de huevo con tocino, queso cheddar y cebolla caramelizada",
-    "id": "P019",
+    "id": "019",
     "img": "/images/19.jpg",
     "ingredients": [
       "mozzarella",
@@ -256,7 +256,7 @@
   },
   {
     "desc": "Pizza de carne asada (mozzarella, carne asada, cebolla, pimientos y jalapeños)",
-    "id": "P020",
+    "id": "020",
     "img": "/images/20.jpg",
     "ingredients": [
       "mozzarella",

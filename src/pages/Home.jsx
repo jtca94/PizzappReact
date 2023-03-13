@@ -2,7 +2,7 @@ import { Container } from "@mui/system"
 import { Typography } from "@mui/material"
 import { Grid } from "@mui/material"
 
-import CardPizza from "../components/CardPizza"
+import PizzasHome from "../components/PizzasHome"
 import Img from '/images/PizzaBanner.jpg'
 export default function Home() {
     return (
@@ -44,7 +44,7 @@ export default function Home() {
                 >
                     <Grid container sx={{ py: 5 }}>
                         
-                            <CardPizza />
+                            <PizzasHome />
                         
                     </Grid>
                 </Container>

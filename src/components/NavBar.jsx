@@ -15,6 +15,8 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import LocalPizzaIcon from '@mui/icons-material/LocalPizza';
 
+import useScrollTrigger from '@mui/material/useScrollTrigger';
+
 
 import { NavLink } from 'react-router-dom';
 
@@ -51,7 +53,7 @@ function DrawerAppBar(props) {
                         <ListItemButton sx={{ textAlign: 'center' }}
                         >
                             <NavLink
-
+                            
                                 to={path}
                                 style={{ textDecoration: 'none', color: 'white' }}>
                                 <ListItemText primary={name} />
@@ -66,11 +68,17 @@ function DrawerAppBar(props) {
     );
 
     const container = window !== undefined ? () => window().document.body : undefined;
-
+    const trigger = useScrollTrigger({
+        disableHysteresis: true,
+        threshold: 0,
+    });
+                
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar component="nav" >
+            <AppBar 
+                
+                sx={{ backgroundColor: trigger ? 'rgba(3, 7, 30, 0.7)' : 'rgb(3, 7, 30)',  transition: '1s', backdropFilter: trigger && 'blur(8px)'  }} component="nav" >
                 <Toolbar>
                     <IconButton
                         color="inherit"
@@ -104,9 +112,8 @@ function DrawerAppBar(props) {
                                 key={name} >
 
                                 <NavLink
-
-
-                                    style={{ textDecoration: 'none', color: 'white' }}
+                                    className={({isActive}) => isActive ? 'active' : 'inactive'}
+                                    style={{ textDecoration: 'none' }}
                                     to={path}
                                 >
                                     {name}

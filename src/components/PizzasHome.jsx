@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Zoom, Grid, Card, CardMedia, CardContent, Typography, CardActions, Button, Divider, Container, useMediaQuery, Pagination } from '@mui/material';
 import { useApi } from '../context/ContextApi';
 
-export default function CardPizza() {
+export default function PizzasHome() {
     const { data } = useApi();
     // funcion para saber si es una pantalla es sm
     const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
@@ -13,6 +13,7 @@ export default function CardPizza() {
     //calculo de la pagina actual
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    // items que se muestran en la pagina actual usando slice
     const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
     //calculo de las paginas totales
     const totalPages = Math.ceil(data.length / itemsPerPage);
@@ -33,7 +34,7 @@ export default function CardPizza() {
                     const { id, name, desc, price, img } = pizza;
                     return (
                         <Zoom key={id} in={true} >
-                            <Grid item xs={12} sm={6} md={4}>
+                            <Grid item xs={12} sm={4}>
                                 <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column'  }}>
                                     <CardMedia component="img" alt={name} height="140" image={img} />
                                     <CardContent sx={{ flexGrow: 1 }}>

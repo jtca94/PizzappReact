@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const ApiContext = createContext();
 
@@ -6,7 +7,30 @@ export const ApiContext = createContext();
 
 export const ApiContextProvider = ({ children }) => {
 
+    const navigate = useNavigate();
+
+    const handleClick = (id) => {
+        navigate(`/pizzas/${id}`);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     const getData = async () => {
         try {
@@ -19,6 +43,7 @@ export const ApiContextProvider = ({ children }) => {
         }
 
         finally {
+            setLoading(false);
             console.log("Finally");
         }
     }
@@ -29,7 +54,7 @@ export const ApiContextProvider = ({ children }) => {
 
 
     return (
-        <ApiContext.Provider value={{ data }}>
+        <ApiContext.Provider value={{ data, handleClick, loading }}>
             {children}
         </ApiContext.Provider>
     );
