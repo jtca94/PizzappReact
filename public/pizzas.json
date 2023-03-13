@@ -1,6 +1,6 @@
 [
   {
-    "desc": "La pizza Margherita es una de las más populares y tradicionales de Italia. Su nombre se debe a la reina Margherita de Saboya, quien en 1889 la probó y quedó encantada con su sabor. Esta pizza está hecha con una base de masa de pizza fina y crujiente, cubierta con una deliciosa salsa de tomate, mozzarella fresca y hojas de albahaca fresca. Se hornea en un horno de leña hasta que la masa esté dorada y crujiente, y se sirve caliente. ¡Una auténtica delicia italiana!",
+    "desc": "Esta pizza está hecha con una base de masa de pizza fina y crujiente, cubierta con una deliciosa salsa de tomate, mozzarella fresca y hojas de albahaca fresca. Se hornea en un horno de leña hasta que la masa esté dorada y crujiente, y se sirve caliente. ¡Una auténtica delicia italiana!",
     "id": "P001",
     "img": "/images/1.jpg",
     "ingredients": [
@@ -12,7 +12,7 @@
     "price": 8990
   },
   {
-    "desc": "La pizza Pepperoni es una de las pizzas más populares en todo el mundo. Es una pizza de estilo estadounidense, que se caracteriza por su deliciosa salsa de tomate, su base de masa crujiente y su salami picante de pepperoni. Se suele añadir también queso mozzarella rallado y orégano. Es una pizza perfecta para aquellos que buscan un sabor intenso y picante.",
+    "desc": "La pizza Pepperoni es una de las pizzas más populares en todo el mundo. Es una pizza de estilo estadounidense, que se caracteriza por su deliciosa salsa de tomate, su base de masa crujiente y su salami picante de pepperoni.",
     "id": "P002",
     "img": "/images/2.jpg",
     "ingredients": [

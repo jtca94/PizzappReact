@@ -38,8 +38,11 @@ export default function Home() {
                 </Typography>
 
 
-                <Container>
-                    <Grid container spacing={2} sx={{ py: 5 }}>
+                <Container
+                    maxWidth='md' 
+                
+                >
+                    <Grid container sx={{ py: 5 }}>
                         
                             <CardPizza />
                         

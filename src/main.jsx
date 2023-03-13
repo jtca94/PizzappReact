@@ -14,7 +14,10 @@ const theme = createTheme({
 
   palette: {
     primary: { main: '#03071E', second: '#370617', third: '#6A040F', fourth: '#9D0208', fifth: '#D00000', sixth: '#DC2F02', seventh: '#E85D04', eight: '#F48C06', nine: '#FAA307', ten: '#FFBA08' },
+    secondary: { main: '#D00000' },
+    third: { main: '#FFBA08' },
   },
+    
 })
 
 ReactDOM.createRoot(document.getElementById('root')).render(
