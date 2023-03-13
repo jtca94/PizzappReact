@@ -2,7 +2,7 @@ import { Grid, Card, CardMedia, CardContent, Typography, CardActions, Button, Di
 import { useApi } from '../context/ContextApi';
 export default function PizzaCard() {
 
-    const { data, handleClick } = useApi();
+    const { data, handleClick, handleClickAdd } = useApi();
     return(
         <Grid container spacing={2}>
                 {data.map((pizza) => {
@@ -40,8 +40,8 @@ export default function PizzaCard() {
                                     <CardActions sx={{p: 3}}>
                                        
                                         {/* hay que pasar a traves de context la logica de los botones */}
-                                        <Button onClick={( ) => handleClick(id)   } color='primary' variant='outlined' size="small">Ver más</Button>
-                                        <Button color='third' variant='contained' size="small">Agregar</Button>
+                                        <Button onClick={( ) => handleClick(id)} color='primary' variant='outlined' size="small">Ver más</Button>
+                                        <Button onClick={() => handleClickAdd(pizza)} color='third' variant='contained' size="small">Agregar</Button>
                                     </CardActions>
                                 </Card>
                             </Grid>

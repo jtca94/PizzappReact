@@ -3,7 +3,7 @@ import { Zoom, Grid, Card, CardMedia, CardContent, Typography, CardActions, Butt
 import { useApi } from '../context/ContextApi';
 
 export default function PizzasHome() {
-    const { data } = useApi();
+    const { data, handleClick, handleClickAdd } = useApi();
     // funcion para saber si es una pantalla es sm
     const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
     //estado de la pagina actual
@@ -54,8 +54,8 @@ export default function PizzasHome() {
                                     <CardActions sx={{p: 3}}>
                                        
                                         {/* hay que pasar a traves de context la logica de los botones */}
-                                        <Button color='primary' variant='outlined' size="small">Ver más</Button>
-                                        <Button color='third' variant='contained' size="small">Agregar</Button>
+                                        <Button onClick={( ) => handleClick(id)} color='primary' variant='outlined' size="small">Ver más</Button>
+                                        <Button onClick={() => handleClickAdd(pizza)} color='third' variant='contained' size="small">Agregar</Button>
                                     </CardActions>
                                 </Card>
                             </Grid>
@@ -67,6 +67,7 @@ export default function PizzasHome() {
                 sx={{ display: 'flex', justifyContent: 'center' }}
             >
                 <Pagination
+                    size={isSmallScreen ? "small" : "large"}
                     color='secondary'
                     sx={{ mt: 4 }}
                     count={totalPages}

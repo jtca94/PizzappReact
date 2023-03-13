@@ -5,47 +5,65 @@ import { useApi } from "../context/ContextApi";
 import { Grid } from "@mui/material";
 import { Box } from "@mui/system";
 import { ListItem } from "@mui/material";
+import { Divider } from "@mui/material";
+import { Button } from "@mui/material";
 
 
 export default function Pizzas() {
     const { Id } = useParams();
-    const { data, loading } = useApi();
+    const { data, loading, handleClickBack, handleClickAdd } = useApi();
     const pizza = data.find((item) => item.id === Id)
-    console.log(pizza);
+  
 
 
 
     return (
         
-        <Container>
+        <Container 
+            sx={{my: 3}}
+        >
             {loading ? <Typography variant="h4" component="h1">Loading...</Typography> : 
-            <Grid container>
-                <Grid xs={6} item>
+            <Grid spacing={3} container>
+                <Grid xs={12} sm={6} item
+                    sx={{display: "flex"}}
+                >
                     
                     <Box
                         component="img"
                         src={pizza.img}
                         alt={pizza.name}
-                        sx={{ width: "100%", height: "100%" }}
+                        sx={{ width: "100%", height: "auto", alignSelf: "center", borderRadius: 2, boxShadow: 5}}
+
                       
                     />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={12} sm={6}>
                     <Typography variant="h4" component="h1">
                         {pizza.name}
                     </Typography>
-                    <Typography sx={{fontWeight: 300}} variant="h6" component="h2">
+                    <Typography sx={{fontWeight: 300, py: 3}} variant="h6" component="h2">
                         {pizza.desc}
                     </Typography>
+                    <Divider/>
+                    <Typography sx={{pt: 3}} variant="h6" component="h2">
+                        Ingredientes:
+                    </Typography>
                   
-                    <Typography variant="body1" component="p">
+                    <Typography sx={{pb: 3}} variant="body1" component="p">
                         {pizza.ingredients.map((ingredient) => {
-                            return <ListItem key={ingredient} >{ingredient}</ListItem>;
+                            return <ListItem dense key={ingredient} >{ingredient}</ListItem>;
                         })}
                     </Typography>
-                    <Typography variant="h6" component="h2">
-                        $ {pizza.price.toLocaleString("De-de")} -.
+                    <Divider/>
+                    <Container
+                        sx={{display: "flex",  alignItems: "center", py: 3}} 
+                        disableGutters={true} >
+                    <Typography sx={{ flexGrow: 1 }} variant="h6" component="h2">
+                        $ {pizza.price.toLocaleString("De-de")}
                     </Typography>
+                    <Button sx={{mr: 3}} onClick={handleClickBack} color='secondary' variant='outlined' >Volver</Button>
+                    <Button onClick={() => handleClickAdd(pizza)} color='third' variant='contained'>Agregar</Button>
+                    </Container>
                 </Grid>
             </Grid>
             }
