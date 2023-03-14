@@ -2,7 +2,7 @@
 
 This is a web application for a pizza restaurant where customers can order pizzas online. The application has three main pages - Home, Pizzas and Cart. The application was built using React, Vite, MUI and React Router.
 
-You can visit the deploy here:`https://main--bejewelled-scone-833716.netlify.app/`
+You can visit the deploy here:[`https://main--bejewelled-scone-833716.netlify.app/`](https://main--bejewelled-scone-833716.netlify.app/)
 
 ## Home Page
 
