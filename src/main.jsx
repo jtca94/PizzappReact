@@ -23,7 +23,7 @@ const theme = createTheme({
 })
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-
+  <React.StrictMode>
     <BrowserRouter>
       <CssBaseline >
         <ThemeProvider theme={theme}>
@@ -31,5 +31,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </ThemeProvider>
       </CssBaseline>
     </BrowserRouter>
+  </React.StrictMode>
 
 )
