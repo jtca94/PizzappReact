@@ -20,12 +20,12 @@ export default function Cart() {
         <Container maxWidth='md'
             sx={{ my: 3 }}
         >
-            <Typography variant='h2' align='center' sx={{ my: 3 }}>
+            <Typography variant='h2' align='center' sx={{ my: 3, fontWeight: 500 }}>
                 Tu selección de Pizzas
             </Typography>
 
-            {cart.length === 0 ? <Typography variant='h4' align='center' sx={{ my: 3 }}>
-                No hay pizzas en el carrito
+            {cart.length === 0 ? <Typography variant='h4' align='center' sx={{ my: 3, minHeight: '60vh' }}>
+                No hay pizzas en el carrito aún!
             </Typography> :
 
             <Container
@@ -54,21 +54,16 @@ export default function Cart() {
                                     <Grid item xs={12} sm={6}
                                         sx={{ display: 'flex', justifyContent: 'start', alignItems: 'center', mt: 2 }}
                                     >
-
                                         <Box
                                             component='img'
                                             alt={id.name}
                                             src={id.img}
                                             sx={{ width: 80, height: 60, mr: 2, borderRadius: 1, boxShadow: 3 }}
                                         />
-
                                         <Typography variant='p'>
                                             {id.name}
                                         </Typography>
-
                                     </Grid>
-
-
                                     <Grid item xs={12} sm={6}
                                         sx={isSmallScreen ? { display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: 2 } : { display: 'flex', justifyContent: 'end', alignItems: 'center', mt: 2 }}
                                     >

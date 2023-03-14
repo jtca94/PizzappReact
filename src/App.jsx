@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Pizzas from './pages/Pizzas'
 import Cart from './pages/Cart'
 import Pizza from './pages/Pizza'
+import Page404 from './pages/Page404'
 import { ApiContextProvider } from './context/ContextApi'
 import { Routes, Route } from 'react-router-dom'
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/pizzas" element={<Pizzas />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="pizzas/:Id" element={<Pizza />} />
+          <Route path="*" element={<Page404 />} />
         </Routes>
         <Snackbar/>
         <Footer />

@@ -7,6 +7,8 @@ import { Box } from "@mui/system";
 import { ListItem } from "@mui/material";
 import { Divider } from "@mui/material";
 import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import Spinner from "../components/Spinner";
 import AddShoppingCart from "@mui/icons-material/AddShoppingCart";
 
 
@@ -14,8 +16,11 @@ export default function Pizzas() {
     const { Id } = useParams();
     const { data, loading, handleClickBack, handleClickAdd } = useApi();
     const pizza = data.find((item) => item.id === Id)
-
-
+    const navigate = useNavigate();
+    if (!pizza) {
+        return navigate("*")
+        
+    }   
 
 
     return (
@@ -23,7 +28,7 @@ export default function Pizzas() {
         <Container
             sx={{ my: 3 }}
         >
-            {loading ? <Typography variant="h4" component="h1">Loading...</Typography> :
+            {loading ? <Spinner/> :
                 <Grid spacing={3} container>
                     <Grid xs={12} sm={6} item
                         sx={{ display: "flex" }}

@@ -107,7 +107,7 @@ export const ApiContextProvider = ({ children }) => {
     }, [cart])
 
 
-
+    const [error, setError] = useState(null);
 
 
 
@@ -124,14 +124,17 @@ export const ApiContextProvider = ({ children }) => {
             const response = await fetch("/pizzas.json");
             const data = await response.json();
             setData(data);
+            if (!response.ok) {
+                throw new Error(true) ;
+            }
         }
         catch (error) {
-            console.log(error);
+            setError(error);
+            navigate('*');
         }
 
         finally {
             setLoading(false);
-            console.log("Finally");
         }
     }
 
@@ -152,7 +155,8 @@ export const ApiContextProvider = ({ children }) => {
                                         open, 
                                         setBadgeCuanty,
                                         badgeCuanty,
-                                        cartTotal
+                                        cartTotal,
+                                        error
                                          }}>
             {children}
         </ApiContext.Provider>
