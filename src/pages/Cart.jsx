@@ -19,14 +19,26 @@ export default function Cart() {
     return (
         <Container maxWidth='md'
             sx={{ my: 3 }}
-        >
+        > 
             <Typography variant='h2' align='center' sx={{ my: 3, fontWeight: 500 }}>
                 Tu selección de Pizzas
             </Typography>
 
-            {cart.length === 0 ? <Typography variant='h4' align='center' sx={{ my: 3, minHeight: '60vh' }}>
+            {cart.length === 0 ? <> <Typography variant='h4' align='center' sx={{ my: 3 }}>
                 No hay pizzas en el carrito aún!
-            </Typography> :
+            </Typography>
+            <Box
+                sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', my: 3 }}
+            >
+            <Box
+                component='img'
+                alt='No hay pizzas en el carrito aún!'
+                src='/images/cartImg.png'
+                sx={{ width: '50%', height: '50%' }}
+            />
+             </Box>
+            </>
+            :
 
             <Container
                 sx={{
