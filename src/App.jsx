@@ -1,5 +1,6 @@
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
+import Snackbar from './components/Snackbar'
 import Home from './pages/Home'
 import Pizzas from './pages/Pizzas'
 import Cart from './pages/Cart'
@@ -22,6 +23,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="pizzas/:Id" element={<Pizza />} />
         </Routes>
+        <Snackbar/>
         <Footer />
       </ApiContextProvider>
 

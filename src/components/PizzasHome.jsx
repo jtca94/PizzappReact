@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Zoom, Grid, Card, CardMedia, CardContent, Typography, CardActions, Button, Divider, Container, useMediaQuery, Pagination } from '@mui/material';
 import { useApi } from '../context/ContextApi';
-
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 export default function PizzasHome() {
     const { data, handleClick, handleClickAdd } = useApi();
     // funcion para saber si es una pantalla es sm
@@ -54,8 +54,8 @@ export default function PizzasHome() {
                                     <CardActions sx={{p: 3}}>
                                        
                                         {/* hay que pasar a traves de context la logica de los botones */}
-                                        <Button onClick={( ) => handleClick(id)} color='primary' variant='outlined' size="small">Ver más</Button>
-                                        <Button onClick={() => handleClickAdd(pizza)} color='third' variant='contained' size="small">Agregar</Button>
+                                        <Button onClick={( ) => handleClick(id)} color='primary' variant='outlined' size="small">Más</Button>
+                                        <Button startIcon={<AddShoppingCartIcon fontSize='small' />} onClick={() => handleClickAdd(pizza)} color='third' variant='contained' size="small">Agregar</Button>
                                     </CardActions>
                                 </Card>
                             </Grid>

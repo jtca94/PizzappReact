@@ -14,21 +14,28 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import LocalPizzaIcon from '@mui/icons-material/LocalPizza';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import Badge from '@mui/material/Badge';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import { useState } from 'react';
+
+
 
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 
-
+import { useApi } from '../context/ContextApi';
 import { NavLink } from 'react-router-dom';
 
 
 
 const drawerWidth = 240;
-const navItems = [{ name: 'Home', path: '/' }, { name: 'pizzas', path: '/pizzas' }, { name: 'cart', path: '/cart' }];
+const navItems = [{ name: 'Home', path: '/' }, { name: 'pizzas', path: '/pizzas' }, { name: 'Carro', path: '/cart' }];
 
 function DrawerAppBar(props) {
     const { window } = props;
-    const [mobileOpen, setMobileOpen] = React.useState(false);
-
+    const [mobileOpen, setMobileOpen] = useState(false);
+    const { badgeCuanty, cartTotal } = useApi();
 
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
@@ -53,7 +60,7 @@ function DrawerAppBar(props) {
                         <ListItemButton sx={{ textAlign: 'center' }}
                         >
                             <NavLink
-                            
+
                                 to={path}
                                 style={{ textDecoration: 'none', color: 'white' }}>
                                 <ListItemText primary={name} />
@@ -72,13 +79,14 @@ function DrawerAppBar(props) {
         disableHysteresis: true,
         threshold: 0,
     });
-                
+
+
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar 
-                
-                sx={{ backgroundColor: trigger ? 'rgba(3, 7, 30, 0.7)' : 'rgb(3, 7, 30)',  transition: '1s', backdropFilter: trigger && 'blur(8px)'  }} component="nav" >
+            <AppBar
+
+                sx={{ backgroundColor: trigger ? 'rgba(3, 7, 30, 0.7)' : 'rgb(3, 7, 30)', transition: '1s', backdropFilter: trigger && 'blur(8px)' }} component="nav" >
                 <Toolbar>
                     <IconButton
                         color="inherit"
@@ -89,9 +97,14 @@ function DrawerAppBar(props) {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <IconButton sx={{ textAlign: 'center', mr: 2 }}>
+                    <IconButton
+
+                        sx={{ textAlign: 'center', mr: 2 }}>
+
                         <LocalPizzaIcon sx={{ color: 'primary.fifth' }} />
+
                     </IconButton>
+
                     <Typography
                         variant="h6"
 
@@ -101,7 +114,6 @@ function DrawerAppBar(props) {
                         Mamma Mia!
                     </Typography>
                     
-
                     <Box
 
                         sx={{ display: { xs: 'none', sm: 'block' } }}>
@@ -112,7 +124,7 @@ function DrawerAppBar(props) {
                                 key={name} >
 
                                 <NavLink
-                                    className={({isActive}) => isActive ? 'active' : 'inactive'}
+                                    className={({ isActive }) => isActive ? 'active' : 'inactive'}
                                     style={{ textDecoration: 'none' }}
                                     to={path}
                                 >
@@ -123,6 +135,21 @@ function DrawerAppBar(props) {
 
                         ))}
                     </Box>
+                    <IconButton
+                        color="inherit"
+                    > <NavLink
+                    className={({ isActive }) => isActive ? 'white' : 'inactive'}
+                    to='/cart'
+                >
+                        <Badge color="fourth" badgeContent={badgeCuanty}>
+                            <ShoppingCartIcon />
+                        </Badge>
+                    </NavLink>
+                    </IconButton>
+                    <Typography
+                        sx={{ mx: 2 }}
+                    >{cartTotal === 0 ? null : cartTotal.toLocaleString('es-CL', { style: 'currency', currency: 'CLP' })}
+                    </Typography>
                 </Toolbar>
             </AppBar>
 
