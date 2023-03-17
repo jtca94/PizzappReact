@@ -8,6 +8,7 @@ import { ListItem } from "@mui/material";
 import { Divider } from "@mui/material";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { LabelOutlinedIcon } from "@mui/icons-material/LabelOutlined";
 import Spinner from "../components/Spinner";
 import AddShoppingCart from "@mui/icons-material/AddShoppingCart";
 
@@ -19,8 +20,8 @@ export default function Pizzas() {
     const navigate = useNavigate();
     if (!pizza) {
         return navigate("*")
-        
-    }   
+
+    }
 
 
     return (
@@ -28,7 +29,7 @@ export default function Pizzas() {
         <Container
             sx={{ my: 3 }}
         >
-            {loading ? <Spinner/> :
+            {loading ? <Spinner /> :
                 <Grid spacing={3} container>
                     <Grid xs={12} sm={6} item
                         sx={{ display: "flex" }}
@@ -57,7 +58,13 @@ export default function Pizzas() {
 
                         <Typography sx={{ pb: 3 }} variant="body1" component="p">
                             {pizza.ingredients.map((ingredient) => {
-                                return <ListItem dense key={ingredient} >{ingredient}</ListItem>;
+                                return <ListItem dense key={ingredient} >
+                                    <LabelOutlinedIcon 
+                                        size='small'
+                                        sx={{ mr: 1 }}
+                                    />
+                                    {ingredient.charAt(0).toUpperCase() + ingredient.slice(1)}
+                                </ListItem>;
                             })}
                         </Typography>
                         <Divider />
