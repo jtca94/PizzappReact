@@ -118,9 +118,18 @@ export const ApiContextProvider = ({ children }) => {
     // consumo api
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
+    // solo para simular loading
+    const fakePromise = () => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve();
+            }, 2000);
+        });
+    }
 
     const getData = async () => {
         try {
+            await fakePromise();
             const response = await fetch("/pizzas.json");
             const data = await response.json();
             setData(data);

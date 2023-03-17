@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Zoom, Grid, Card, CardMedia, CardContent, Typography, CardActions, Button, Divider, Container, useMediaQuery, Pagination } from '@mui/material';
 import { useApi } from '../context/ContextApi';
+import Skeletons from '../components/Skeletons';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 export default function PizzasHome() {
-    const { data, handleClick, handleClickAdd } = useApi();
+    const { data, handleClick, handleClickAdd, loading } = useApi();
     // funcion para saber si es una pantalla es sm
     const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
     //estado de la pagina actual
@@ -29,8 +30,17 @@ export default function PizzasHome() {
 
     return (
         <>
+          
+        
             <Grid container spacing={2}>
-                {currentItems.map((pizza) => {
+            {loading === true ?<> 
+
+            <Skeletons /> 
+            <Skeletons /> 
+            <Skeletons /> 
+            
+            </>:
+                currentItems.map((pizza) => {
                     const { id, name, desc, price, img } = pizza;
                     return (
                         <Zoom key={id} in={true} >
@@ -74,6 +84,8 @@ export default function PizzasHome() {
                     page={currentPage}
                     onChange={handleChange} />
             </Container>
+            
+            
         </>
     );
 }
