@@ -8,7 +8,9 @@ import { ListItem } from "@mui/material";
 import { Divider } from "@mui/material";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { LabelOutlinedIcon } from "@mui/icons-material/LabelOutlined";
+import { useEffect } from "react";
+import { useState } from "react";
+import LabelOutlinedIcon from '@mui/icons-material/LabelOutlined';
 import Spinner from "../components/Spinner";
 import AddShoppingCart from "@mui/icons-material/AddShoppingCart";
 
@@ -16,12 +18,10 @@ import AddShoppingCart from "@mui/icons-material/AddShoppingCart";
 export default function Pizzas() {
     const { Id } = useParams();
     const { data, loading, handleClickBack, handleClickAdd } = useApi();
+   
     const pizza = data.find((item) => item.id === Id)
-    const navigate = useNavigate();
-    if (!pizza) {
-        return navigate("*")
 
-    }
+
 
 
     return (
@@ -58,12 +58,12 @@ export default function Pizzas() {
 
                         <Typography sx={{ pb: 3 }} variant="body1" component="p">
                             {pizza.ingredients.map((ingredient) => {
-                                return <ListItem dense key={ingredient} >
-                                    <LabelOutlinedIcon 
-                                        size='small'
-                                        sx={{ mr: 1 }}
-                                    />
-                                    {ingredient.charAt(0).toUpperCase() + ingredient.slice(1)}
+                                return <ListItem
+                                    key={ingredient} >
+                                        <LabelOutlinedIcon 
+                                        size="small"
+                                        sx={{ mr: 1 }} /> 
+                                        {ingredient.charAt(0).toUpperCase() + ingredient.slice(1)}                            
                                 </ListItem>;
                             })}
                         </Typography>
