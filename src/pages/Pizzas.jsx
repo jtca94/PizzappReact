@@ -1,5 +1,5 @@
 import { Container } from "@mui/system"
-import { Typography } from "@mui/material"
+import { Typography, Divider } from "@mui/material"
 import PizzaCard from "../components/PizzaCard"
 export default function pizzas() {
 
@@ -14,6 +14,9 @@ export default function pizzas() {
                 >
                 Nuestra variedad de pizzas
             </Typography>
+            <Divider 
+                sx={{mb: 3}}
+            />
             <PizzaCard/>
 
         </Container>
